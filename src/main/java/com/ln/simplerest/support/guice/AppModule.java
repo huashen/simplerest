@@ -13,6 +13,8 @@ import com.ln.simplerest.service.OrderService;
 import com.ln.simplerest.service.impl.GoodsServiceImpl;
 import com.ln.simplerest.service.impl.OrderItemServiceImpl;
 import com.ln.simplerest.service.impl.OrderServiceImpl;
+import com.ln.simplerest.support.GuiceAdaptableJobFactory;
+import com.ln.simplerest.support.QuartzManager;
 
 /**
  * 引用模块，用来绑定dao和service
@@ -32,6 +34,8 @@ public class AppModule extends AbstractModule {
     	
     	bind(OrderItemDao.class).to(OrderItemDaoMapperImpl.class);
     	bind(OrderItemService.class).to(OrderItemServiceImpl.class);
+    	bind(GuiceAdaptableJobFactory.class);
+    	bind(QuartzManager.class);
 	}
 
 }
